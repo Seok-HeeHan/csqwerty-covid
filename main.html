@@ -40,10 +40,10 @@
           <h2>코로나 뉴스</h2>
               <div>
       <h2>코로나 현황</h2>
-   <p id="1">code1</p>
-   <p id="2">code2</p>
-   <p id="3">code3</p>
-   <p id="4">code4</p>
+   <p id="test1">code1</p>
+   <p id="test2">code2</p>
+   <p id="test3">code3</p>
+   <p id="test4">code4</p>
       </div>
 </div>
 
@@ -91,10 +91,10 @@
   <script type="text/javascript">
     $.getJSON("comfirm.json", function(json) {
       console.log(json);
-      document.getElementById('1').innerHTML = "확진자 수: " + json[1];
-      document.getElementById('2').innerHTML = "격리 해제: " + json[2];
-      document.getElementById('3').innerHTML = "검사 인원: " + json[3];
-      document.getElementById('4').innerHTML = "사망자: " + json[4];
+      document.getElementById('test1').innerHTML = "확진자 수: " + json[1];
+      document.getElementById('test2').innerHTML = "격리 해제: " + json[2];
+      document.getElementById('test3').innerHTML = "검사 인원: " + json[3];
+      document.getElementById('test4').innerHTML = "사망자: " + json[4];
     });
   </script>
 
