@@ -1,0 +1,168 @@
+ <script type="text/javascript">
+  var confirm = 'confirm.json';
+  var dead = 'dead.json';
+  var tested = 'tested.json';
+  var unlocked = 'unlocked.json';
+  let today = new Date();
+  let year = today.getFullYear(); // 년도
+  let month = today.getMonth() + 1; // 월
+  let date = today.getDate(); // 날짜
+</script>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>코로나 다모아</title>
+  <style>
+    table {
+      width: 50%;
+    }
+    h1{
+      font-size: 45px;
+      text-align: center;
+      border-bottom:1px solid gray;
+      }
+    </style>
+    <h1>코로나 다모아</h1>
+
+</head>
+
+<body>
+  <style>
+        #grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr
+        }
+    </style>
+  <div id="grid">
+          <h2>코로나 뉴스</h2>
+              <div>
+      <h2>코로나 현황</h2>
+   <p id="1">code1</p>
+   <p id="2">code2</p>
+   <p id="3">code3</p>
+   <p id="4">code4</p>
+      </div>
+</div>
+
+
+
+<div w3-include-html="코로나.html"></div>
+
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+
+    includeHTML();
+  </script>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+    $.getJSON("comfirm.json", function(json) {
+      console.log(json);
+      document.getElementById('1').innerHTML = "확진자 수: " + json[1];
+      document.getElementById('2').innerHTML = "격리 해제: " + json[2];
+      document.getElementById('3').innerHTML = "검사 인원: " + json[3];
+      document.getElementById('4').innerHTML = "사망자: " + json[4];
+    });
+  </script>
+
+  <h2>여러 사이트</h2>
+  <div style="text-align:center;">
+    <table id="margin">
+
+      <thead>
+        <style>
+          .f {
+      border: 1px solid red;
+      width:30%;
+      box-sizing: border-box;
+  }
+
+  .s{
+      border: 1px solid green;
+      width:30%;
+      box-sizing: border-box;
+  }
+
+  .t{
+      border: 1px solid blue;
+      width:30%;
+      box-sizing: border-box;
+  }
+   #margin{
+     width: 100%;
+   }
+          </style>
+        <tr id="grid2">
+
+          <th class="f">지도</th>
+          <th class="s">공공기관 서비스</th>
+          <th class="t">기타</th>
+        </tr>
+      </thead>
+
+      <body>
+
+        <tr>
+          <td><a href="https://coronamap.site/" target="_blank">코로나맵</a></td>
+          <td><a href="http://www.cdc.go.kr/index.es?sid=a2" target="_blank">대한민국 질병관리본부</a></td>
+          <td><a href="https://mask-nearby.com/" target="_blank">마스크 알리미</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.coronanow.kr/" target="_blank">코로나나우</a></td>
+          <td><a href="http://ncov.mohw.go.kr/" target="_blank">중앙방역대책본부</a></td>
+          <td><a href="https://www.coronawebdamowa.com/maps" target="_blank">신천지 교회시설 정보</a></td>
+        </tr>
+        <tr>
+          <td><a href="http://mabu.newscloud.sbs.co.kr/202002corona2/index.html" target="_blank">sbs 코로나타임라인</a></td>
+          <td><a href="https://who.maps.arcgis.com/apps/opsdashboard/index.html#/c88e37cfc43b4ed3baf977d77e4a0667/" target="_blank">WHO 세계 보건기구 코로나 발생정보</a></td>
+          <td><a href=""></a></td>
+        </tr>
+        <tr>
+          <td><a href="https://uvirus.kr/" target="_blank">uvirus map</a></td>
+          <td><a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank">미국 질병통제센터 CDC</a></td>
+          <td><a href=""></a></td>
+        </tr>
+        <tr>
+          <td><a href="https://livecorona.co.kr/" target="_blank">라이브 코로나 맵</a></td>
+          <td><a href="https://www.data.go.kr/" target="_blank">공공데이터포털</a></td>
+          <td><a href=""></a></td>
+        </tr>
+      </body>
+    </table>
+  </div>
+</body>
+
+</html>
