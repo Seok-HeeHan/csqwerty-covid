@@ -1,12 +1,6 @@
  <script type="text/javascript">
   var confirm = 'confirm.json';
-  var dead = 'dead.json';
-  var tested = 'tested.json';
-  var unlocked = 'unlocked.json';
-  let today = new Date();
-  let year = today.getFullYear(); // 년도
-  let month = today.getMonth() + 1; // 월
-  let date = today.getDate(); // 날짜
+
 </script>
 
 <!doctype html>
@@ -33,23 +27,26 @@
   <style>
         #grid{
         display: grid;
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr 1fr;
         }
     </style>
   <div id="grid">
-          <h2>코로나 뉴스</h2>
-              <div>
-      <h2>코로나 현황</h2>
-   <p id="test1">code1</p>
-   <p id="test2">code2</p>
-   <p id="test3">code3</p>
-   <p id="test4">code4</p>
+
+    <div>
+    <h2>코로나 뉴스(Covid-19 news)</h2>
+      <div w3-include-html="코로나.html"><h2>코로나 뉴스</h2></div>
+      </div>
+
+      <div>
+      <h2>코로나 현황(Covid-19 Status Report)</h2>
+   <p id="test1">확진자 수</p>
+   <p id="test2">격리 해제</p>
+   <p id="test3">검사 인원</p>
+   <p id="test4">사망자</p>
       </div>
 </div>
 
 
-
-<div w3-include-html="코로나.html"></div>
 
   <script>
     function includeHTML() {
@@ -98,7 +95,7 @@
     });
   </script>
 
-  <h2>여러 사이트</h2>
+  <h2>신종코로나바이러스 관련 사이트(Other websites that are related to Covid-19)</h2>
   <div style="text-align:center;">
     <table id="margin">
 
@@ -136,37 +133,42 @@
       <body>
 
         <tr>
-          <td><a href="https://coronamap.site/" target="_blank">코로나맵</a></td>
-          <td><a href="http://www.cdc.go.kr/index.es?sid=a2" target="_blank">대한민국 질병관리본부</a></td>
-          <td><a href="https://mask-nearby.com/" target="_blank">마스크 알리미</a></td>
+          <td><center><a href="https://coronamap.site/" target="_blank">코로나맵</a></center></td>
+          <td><center><a href="http://www.cdc.go.kr/index.es?sid=a2" target="_blank">대한민국 질병관리본부</a></center></td>
+          <td><center><a href="https://mask-nearby.com/" target="_blank">마스크 알리미</a></center></td>
         </tr>
         <tr>
-          <td><a href="https://www.coronanow.kr/" target="_blank">코로나나우</a></td>
-          <td><a href="http://ncov.mohw.go.kr/" target="_blank">중앙방역대책본부</a></td>
-          <td><a href="https://www.coronawebdamowa.com/maps" target="_blank">신천지 교회시설 정보</a></td>
+          <td><center><a href="https://www.coronanow.kr/" target="_blank">코로나나우</a></center></td>
+          <td><center><a href="http://ncov.mohw.go.kr/" target="_blank">중앙방역대책본부</a></center></td>
+          <td><center><a href="https://www.coronawebdamowa.com/maps" target="_blank">신천지 교회시설 정보</a></center></td>
         </tr>
         <tr>
-          <td><a href="http://mabu.newscloud.sbs.co.kr/202002corona2/index.html" target="_blank">sbs 코로나타임라인</a></td>
-          <td><a href="https://who.maps.arcgis.com/apps/opsdashboard/index.html#/c88e37cfc43b4ed3baf977d77e4a0667/" target="_blank">WHO 세계 보건기구 코로나 발생정보</a></td>
-          <td><a href="https://www.mohw.go.kr/react/popup_200128.html">선별진료소</a></td>
+          <td><center><a href="http://mabu.newscloud.sbs.co.kr/202002corona2/index.html" target="_blank">sbs 코로나타임라인</a></center></td>
+          <td><center><a href="https://who.maps.arcgis.com/apps/opsdashboard/index.html#/c88e37cfc43b4ed3baf977d77e4a0667/" target="_blank">WHO 세계 보건기구 코로나 발생정보</a></center></td>
+          <td><center><a href="https://www.mohw.go.kr/react/popup_200128.html">선별진료소</a></center></td>
         </tr>
         <tr>
-          <td><a href="https://uvirus.kr/" target="_blank">uvirus map</a></td>
-          <td><a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank">미국 질병통제센터 CDC</a></td>
+          <td><center><a href="https://uvirus.kr/" target="_blank">uvirus map</a></center></td>
+          <td><center><a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank">미국 질병통제센터 CDC</a></center></td>
           <td><a href=""></a></td>
         </tr>
         <tr>
-          <td><a href="https://livecorona.co.kr/" target="_blank">라이브 코로나 맵</a></td>
-          <td><a href="https://www.data.go.kr/" target="_blank">공공데이터포털</a></td>
+          <td><center><a href="https://livecorona.co.kr/" target="_blank">라이브 코로나 맵</a></center></td>
+          <td><center><a href="https://www.data.go.kr/" target="_blank">공공데이터포털</a></center></td>
           <td><a href=""></a></td>
         </tr>
       </body>
     </table>
   </div>
 
-<h2>코로나 19 예방법</h2>
+
+<div><h2>코로나 19 예방법(Covid-19 prevention rules / 한국어, English, 中文)</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DPQB51ki93A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QwIf78F2HuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ENNhtabTy_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <h3>제작자에게 한마디</h3>
   <p>
     <div id="disqus_thread"></div>
