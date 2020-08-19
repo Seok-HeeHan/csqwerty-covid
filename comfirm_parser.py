@@ -5,7 +5,7 @@ import json
 import os
 import time
 
-f = open("/home/hsh060824/seokhee/교육/학년/2학년/Qwerty/covid/comfirmt.txt", 'w')
+f = open("C:/seokhee/교육/학년/2학년/Qwerty/covid/comfirmt.txt", 'w')
 f.write(time.strftime('%Y-%m-%d', time.localtime(time.time())))
 f.close()
 
